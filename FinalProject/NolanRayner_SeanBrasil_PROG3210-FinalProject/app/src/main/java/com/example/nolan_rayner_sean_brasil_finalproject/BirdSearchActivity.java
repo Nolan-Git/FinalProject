@@ -13,18 +13,7 @@ public class BirdSearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bird_search);
-
-        ArrayList birdlist = getListData();
-        final ListView lv = (ListView) findViewById(R.id.BirdList);
-
-        lv.setAdapter(new BirdListAdapter(this,birdlist));
     }
-    private ArrayList getListData() {
-        ArrayList<BirdModel> results = new ArrayList<>();
 
-
-
-        return results;
-    }
 
 }
