@@ -43,6 +43,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        //grabs 2 arrays from the string.xml file adn stores them
+        String[] placeNames = getResources().getStringArray(R.array.name);
+        String[] placeCoordinates = getResources().getStringArray(R.array.Coordinate);
+        int x =0;
+        //idk if we need this but added it just in case
+        //for each entry in the place name string splits the same line in the second array of coords
+        //creates a new long lat adress and adds a marker there with the name given.
+        for (String i : placeNames) {
+            //System.out.println(i);
+            //System.out.println(placeCoordinates[x]);
+            String[] Coords = placeCoordinates[x].split(",");
+            //System.out.println(Coords[0]+" "+Coords[1] + " broken up");
+            LatLng marker = new LatLng(Double.parseDouble(Coords[0]), Double.parseDouble(Coords[1]));
+            mMap.addMarker(new MarkerOptions().position(marker).title(i));
+
+            x++;
+        }
+
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));

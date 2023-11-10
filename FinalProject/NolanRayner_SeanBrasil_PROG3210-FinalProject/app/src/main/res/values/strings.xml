@@ -10,4 +10,17 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+We can remove bellow later, just moving in code i have done
+    <array name="Coordinate">
+        <item>39.99750246064848, -83.0048795323117</item>
+        <item>47.57098875456417, -53.555876879000266</item>
+        <item>29.960905438468703, -90.06148038160701</item>
+
+    </array>
+    <string-array name="name">
+        <item>"Dildo,NL,CA"</item>
+        <item>"Idiot, OH, USA"</item>
+        <item>"There is a HOUSE"</item>
+    </string-array>
 </resources>
