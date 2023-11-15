@@ -13,14 +13,22 @@
 
 We can remove bellow later, just moving in code i have done
     <array name="Coordinate">
-        <item>39.99750246064848, -83.0048795323117</item>
-        <item>47.57098875456417, -53.555876879000266</item>
-        <item>29.960905438468703, -90.06148038160701</item>
+        <item>43.69270626123286, -80.73105901384287</item>
+        <item>43.963744070423054, -80.40022330124995</item>
+        <item>45.58494982671248, -78.41343954170927</item>
+        <item>46.04313898053323, -80.8028770655952</item>
+        <item>43.59483000567095, -80.24205614504328</item>
+        <item>46.26165952453066, -74.50949451237867</item>
+        <item>44.43541980307748, -65.21372178444113</item>
 
     </array>
     <string-array name="name">
-        <item>"Dildo,NL,CA"</item>
-        <item>"Idiot, OH, USA"</item>
-        <item>"There is a HOUSE"</item>
+        <item>"Conestogo Lake Conservation Area"</item>
+        <item>"Luther Marsh Wildlife Management Area"</item>
+        <item>"The Cliff Top Scenic Lookout"</item>
+        <item>"General's Island"</item>
+        <item>"Guelph Lake"</item>
+        <item>"Parc national du Mont-Tremblant"</item>
+        <item>"Kejimkujik National Park and National Historic Site"</item>
     </string-array>
 </resources>
