@@ -11,7 +11,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
-We can remove bellow later, just moving in code i have done
+    We can remove bellow later, just moving in code i have done
     <array name="Coordinate">
         <item>43.69270626123286, -80.73105901384287</item>
         <item>43.963744070423054, -80.40022330124995</item>

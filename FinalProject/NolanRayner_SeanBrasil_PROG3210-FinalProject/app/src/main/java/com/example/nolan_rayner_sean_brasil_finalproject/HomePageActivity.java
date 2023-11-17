@@ -10,12 +10,14 @@ import android.widget.Button;
 import java.util.Map;
 
 public class HomePageActivity extends AppCompatActivity {
-    Button maps;
+    Button maps, viewBirds;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
         maps = findViewById(R.id.btnMap);
+        viewBirds = findViewById(R.id.btnSearch);
+
         Intent map = new Intent(this,MapsActivity.class);
         maps.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -23,5 +25,13 @@ public class HomePageActivity extends AppCompatActivity {
                 startActivity(map);
             }
         });
+        Intent birdSearch = new Intent(this,BirdSearchActivity.class);
+        viewBirds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(birdSearch);
+            }
+        });
+
     }
 }

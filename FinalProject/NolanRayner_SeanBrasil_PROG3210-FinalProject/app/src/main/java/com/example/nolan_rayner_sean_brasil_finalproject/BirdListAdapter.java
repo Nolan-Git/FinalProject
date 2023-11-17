@@ -1,6 +1,7 @@
 package com.example.nolan_rayner_sean_brasil_finalproject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,12 +38,28 @@ public class BirdListAdapter extends RecyclerView.Adapter<BirdListAdapter.ViewHo
 // on below line we are setting data
 // to our views of recycler view item.
         BirdModel modal = BirdModelAdapter.get(position);
-        holder.birdImageIV.setImageResource(modal.getImage());
+        //holder.birdImageIV.setImageResource(modal.getImage());
         holder.birdNameTV.setText(modal.getName());
         holder.birdDescTV.setText(modal.getBirdDescription());
         holder.birdLocationTV.setText(modal.getBirdLocation());
         holder.birdStatusTV.setText(modal.getBirdStatus());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+// on below line we are calling an intent.
+                Intent i = new Intent(context, UpdateBirdActivity.class);
+// below we are passing all our values.
+                i.putExtra("name", modal.getName());
+                i.putExtra("description", modal.getBirdDescription());
+                i.putExtra("location", modal.getBirdLocation());
+                i.putExtra("status", modal.getBirdStatus());
+// starting our activity.
+
+                context.startActivity(i);
+            }
+        });
     }
+
     @Override
     public int getItemCount() {
 // returning the size of our array list
@@ -55,7 +72,7 @@ public class BirdListAdapter extends RecyclerView.Adapter<BirdListAdapter.ViewHo
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 // initializing our text views
-            birdImageIV=itemView.findViewById(R.id.idIVBirdImage);
+            //birdImageIV=itemView.findViewById(R.id.idIVBirdImage);
             birdNameTV = itemView.findViewById(R.id.idTVBirdName);
             birdDescTV = itemView.findViewById(R.id.idTVBirdDescription);
             birdLocationTV = itemView.findViewById(R.id.idTVBirdLocation);
