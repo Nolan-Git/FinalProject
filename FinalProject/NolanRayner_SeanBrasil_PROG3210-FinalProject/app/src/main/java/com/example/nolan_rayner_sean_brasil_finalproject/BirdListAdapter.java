@@ -17,13 +17,14 @@ public class BirdListAdapter extends RecyclerView.Adapter<BirdListAdapter.ViewHo
     // variable for our array list and context
     private ArrayList<BirdModel> BirdModelAdapter;
     private Context context;
+    private Boolean isadmin;
     // constructor
     public BirdListAdapter(ArrayList<BirdModel> birdModelArrayList, Context context) {
         this.BirdModelAdapter = birdModelArrayList;
         this.context = context;
 
     }
-
+    public void setIsAdmin(boolean isAdmin){this.isadmin=isAdmin;}
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -43,6 +44,7 @@ public class BirdListAdapter extends RecyclerView.Adapter<BirdListAdapter.ViewHo
         holder.birdDescTV.setText(modal.getBirdDescription());
         holder.birdLocationTV.setText(modal.getBirdLocation());
         holder.birdStatusTV.setText(modal.getBirdStatus());
+        if(isadmin){
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +59,7 @@ public class BirdListAdapter extends RecyclerView.Adapter<BirdListAdapter.ViewHo
 
                 context.startActivity(i);
             }
-        });
+        });}
     }
 
     @Override

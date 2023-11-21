@@ -14,11 +14,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //SharedPreferences myPref =
-        //        getSharedPreferences("info", MODE_PRIVATE);
-        //SharedPreferences.Editor prefedit = myPref.edit();
-        //prefedit.clear();
-        //prefedit.commit();
+        SharedPreferences myPref =
+        getSharedPreferences("info", MODE_PRIVATE);
+        SharedPreferences.Editor prefedit = myPref.edit();
+        prefedit.clear();
+        prefedit.commit();
 
 
         register = (Button) findViewById(R.id.register);

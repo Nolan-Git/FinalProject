@@ -51,7 +51,7 @@ public class UpdateBirdActivity extends AppCompatActivity {
                         birdNameEdt.getText().toString(), BirdDescriptionEdt.getText().toString(),
                         birdStatusEdt.getText().toString(), birdLocationEdt.getText().toString());
 // displaying a toast message that our course has been updated.
-                Toast.makeText(UpdateBirdActivity.this, "Course Updated..",
+                Toast.makeText(UpdateBirdActivity.this, "Bird Updated..",
                         Toast.LENGTH_SHORT).show();
 // launching our main activity.
                 Intent i = new Intent(UpdateBirdActivity.this,
@@ -65,7 +65,7 @@ public class UpdateBirdActivity extends AppCompatActivity {
             public void onClick(View v) {
 // calling a method to delete our course.
                 dbHandler.deleteCourse(courseName);
-                Toast.makeText(UpdateBirdActivity.this, "Deleted the course",
+                Toast.makeText(UpdateBirdActivity.this, "Deleted the Bird",
                         Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(UpdateBirdActivity.this, BirdSearchActivity.class);
                 startActivity(i);

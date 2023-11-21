@@ -64,7 +64,9 @@ public class DBHelper extends SQLiteOpenHelper{
 
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("select * from person where aadhar_number = ?",new String[]{aadhar_number});
-        String savedPin = cursor.getString(6);
+        if (!cursor.moveToFirst()){
+            cursor.moveToFirst();}
+        String savedPin = cursor.getString(5);
         if(savedPin.equals("0000"))
         {
             return true;
@@ -76,7 +78,9 @@ public class DBHelper extends SQLiteOpenHelper{
     public String getName(String aadhar_number){
 
         SQLiteDatabase MyDB = this.getWritableDatabase();
-        Cursor cursor = MyDB.rawQuery("select * from person where aadhar_number = ?",new String[]{aadhar_number});
+        Cursor cursor = MyDB.rawQuery("select name from person where aadhar_number = ?",new String[]{aadhar_number});
+        if (!cursor.moveToFirst()){
+            cursor.moveToFirst();}
         String Name = cursor.getString(0);
         return Name;
     }

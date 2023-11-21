@@ -48,12 +48,13 @@ public class LoginPage extends AppCompatActivity {
                         startActivity(intent);
                     }
                     else{
-                        //SharedPreferences.Editor prefEditor = userPreferences.edit();
-                        //String Username = MyDB.getName(aadhar_numberr);
-                        //prefEditor.putString("UserName",Username);
-                        //Boolean isAdmin = MyDB.isAdmin(aadhar_numberr);
-                       // prefEditor.putBoolean("isAdmin",isAdmin);
-
+                        userPreferences = getSharedPreferences("info", MODE_PRIVATE);
+                        SharedPreferences.Editor prefEditor = userPreferences.edit();
+                        String Username = MyDB.getName(aadhar_numberr);
+                        prefEditor.putString("UserName",Username);
+                        Boolean isAdmin = MyDB.isAdmin(aadhar_numberr);
+                        prefEditor.putBoolean("isAdmin",isAdmin);
+                        prefEditor.commit();
                         Intent intent = new Intent(getApplicationContext(), HomePageActivity.class);
                         startActivity(intent);
                     }

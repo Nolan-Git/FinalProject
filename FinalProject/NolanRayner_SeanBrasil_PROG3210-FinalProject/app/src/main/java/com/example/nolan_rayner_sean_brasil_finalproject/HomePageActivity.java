@@ -21,15 +21,15 @@ public class HomePageActivity extends AppCompatActivity {
         maps = findViewById(R.id.btnMap);
         viewBirds = findViewById(R.id.btnSearch);
         user = findViewById(R.id.tbUsername);
-        //SharedPreferences userpref = getSharedPreferences("info",MODE_PRIVATE);
-        //String username = userpref.getString("UserName","");
-        //Boolean isAdmin = userpref.getBoolean("isAdmin",false);
-       // if(isAdmin){
-        //    user.append(username+"ISADMIN ="+isAdmin);
-        //}
-        //else{
-        //    user.append(username+"ISADMIN ="+isAdmin);
-        //}
+        SharedPreferences userpref = getSharedPreferences("info",MODE_PRIVATE);
+        String username = userpref.getString("UserName","");
+        Boolean isAdmin = userpref.getBoolean("isAdmin",false);
+       if(isAdmin){
+        user.append(username+" ISADMIN = "+isAdmin);
+        }
+        else{
+            user.append(username+" ISADMIN = "+isAdmin);
+        }
 
 
 
