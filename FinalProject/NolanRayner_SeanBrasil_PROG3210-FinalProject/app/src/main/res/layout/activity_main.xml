@@ -33,15 +33,33 @@
         app:srcCompat="@drawable/heron_bird_front_logo" />
 
     <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="184dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="572dp"
-        android:text="Login / Sign Up"
-        android:background="#FF03DAC5"
+        android:id="@+id/register"
+        android:layout_width="123dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Register"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.753"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.842" />
 
+    <Button
+        android:id="@+id/login"
+        android:layout_width="123dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.224"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.872" />
 </androidx.constraintlayout.widget.ConstraintLayout>
