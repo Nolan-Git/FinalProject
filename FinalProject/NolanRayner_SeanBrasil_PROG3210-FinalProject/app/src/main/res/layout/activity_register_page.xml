@@ -98,7 +98,7 @@
         android:layout_marginBottom="8dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint=""
+        android:hint="ID KEY"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
