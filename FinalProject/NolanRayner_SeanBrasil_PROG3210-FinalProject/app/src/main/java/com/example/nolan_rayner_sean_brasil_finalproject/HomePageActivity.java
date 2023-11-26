@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.Map;
 
 public class HomePageActivity extends AppCompatActivity {
-    Button maps, viewBirds;
+    Button maps, viewBirds, about, shop;
     TextView user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,8 @@ public class HomePageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
         maps = findViewById(R.id.btnMap);
         viewBirds = findViewById(R.id.btnSearch);
+        about = findViewById(R.id.btnAbout);
+        shop = findViewById(R.id.btnShop);
         user = findViewById(R.id.tbUsername);
         SharedPreferences userpref = getSharedPreferences("info",MODE_PRIVATE);
         String username = userpref.getString("UserName","");
@@ -31,9 +33,21 @@ public class HomePageActivity extends AppCompatActivity {
             user.append(username+" ISADMIN = "+isAdmin);
         }
 
-
-
-
+        Intent aboutView = new Intent(this,AboutActivity.class);
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(aboutView);
+            }
+        });
+        
+        Intent shopView = new Intent(this,ShopActivity.class);
+        shop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(shopView);
+            }
+        });
 
 
         Intent map = new Intent(this,MapsActivity.class);
