@@ -69,18 +69,11 @@ public class DBHandler extends SQLiteOpenHelper {
     }
     // we have created a new method for reading all the courses.
     public ArrayList<BirdModel> readCourses() {
-// on below line we are creating a
-// database for reading our database.
         SQLiteDatabase db = this.getReadableDatabase();
-// on below line we are creating a cursor with query to read data from
-//database.
         Cursor cursorBirds = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
-// on below line we are creating a new array list.
         ArrayList<BirdModel> birdModalArrayList = new ArrayList<>();
-// moving our cursor to first position.
         if (cursorBirds.moveToFirst()) {
             do {
-// on below line we are adding the data from cursor to our array list.
                 birdModalArrayList.add(new
                         BirdModel(cursorBirds.getString(1),
                         cursorBirds.getString(2),
@@ -94,6 +87,29 @@ public class DBHandler extends SQLiteOpenHelper {
         cursorBirds.close();
         return birdModalArrayList;
     }
+    public ArrayList<BirdModel> searchBirdList(String search) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursorBirds = db.rawQuery("select * from mybirds where name = ?",new String[]{search});
+        ArrayList<BirdModel> birdModalArrayList = new ArrayList<>();
+        if (cursorBirds.moveToFirst()) {
+            do {
+                birdModalArrayList.add(new
+                        BirdModel(cursorBirds.getString(1),
+                        cursorBirds.getString(2),
+                        cursorBirds.getString(4),
+                        cursorBirds.getString(3)));
+            } while (cursorBirds.moveToNext());
+// moving our cursor to next.
+        }
+// at last closing our cursor
+// and returning our array list.
+        cursorBirds.close();
+        return birdModalArrayList;
+    }
+
+
+
+
     // below is the method for updating our courses
     public void updateCourse(String originalBirdName, String birdName, String
             birdDescription,String birdStatus, String birdLocation)

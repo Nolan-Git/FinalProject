@@ -9,23 +9,25 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class BirdSearchActivity extends AppCompatActivity {
     Button addBird;
     private ArrayList<BirdModel> birdModalArrayList;
-
     private DBHandler dbHandler;
-
     private BirdListAdapter birdLVAdapter;
-
     private RecyclerView birdLV;
+    TextView txtsearch;
+    String searchQuery;
+    Boolean search = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bird_search);
         addBird = findViewById(R.id.btnAddBird);
+
         Intent birdAdd = new Intent(this,addBirdActivity.class);
         SharedPreferences userpref = getSharedPreferences("info",MODE_PRIVATE);
         Boolean isAdmin = userpref.getBoolean("isAdmin",false);
@@ -36,7 +38,10 @@ public class BirdSearchActivity extends AppCompatActivity {
 
 // getting our course array
 // list from db handler class.
-        birdModalArrayList = dbHandler.readCourses();
+
+            birdModalArrayList = dbHandler.readCourses();
+
+
 // on below line passing our array list to our adapter class.
         birdLVAdapter = new BirdListAdapter(birdModalArrayList, BirdSearchActivity.this);
         birdLV = findViewById(R.id.BirdList);
