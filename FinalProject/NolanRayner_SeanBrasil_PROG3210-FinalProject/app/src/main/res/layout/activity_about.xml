@@ -7,19 +7,94 @@
     android:background="#F3E7C3"
     tools:context=".AboutActivity">
 
+    <Button
+        android:id="@+id/buttonAAB"
+        android:layout_width="258dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="76dp"
+        android:text="All About Birds"
+        android:onClick="btnAAB_click"
+        android:autoLink="web"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonBirdCanada"
+        android:layout_width="258dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="btnBirdCanada_click"
+        android:text="Birds Canada"
+        android:autoLink="web"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="273dp"
-        android:layout_height="89dp"
+        android:id="@+id/textViewTitle"
+        android:layout_width="341dp"
+        android:layout_height="104dp"
         android:gravity="center"
-        android:text="About"
+        android:text="About Bird World"
         android:textColor="@color/black"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049" />
+        app:layout_constraintVertical_bias="0.025" />
+
+    <ImageView
+        android:id="@+id/imageViewBanner"
+        android:layout_width="368dp"
+        android:layout_height="399dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/birds_about" />
+
+    <TextView
+        android:id="@+id/textViewParagraph"
+        android:layout_width="359dp"
+        android:layout_height="209dp"
+        android:layout_marginTop="304dp"
+        android:text="Welcome to Bird World! Our application is a winged wonderland for bird enthusiasts of all feathers. Whether you're a seasoned birder or just starting to spread your wings in the world of birdwatching, our app is your go-to guide. Our App includes a shop page to buy prints, a map of close bird locations, and a Database where you can search for Birds!"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewHeading"
+        android:layout_width="251dp"
+        android:layout_height="69dp"
+        android:layout_marginBottom="176dp"
+        android:text="Found below are links to popular bird websites!"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonNatGeo"
+        android:layout_width="258dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="128dp"
+        android:text="NatGEO BIRDS"
+        android:autoLink="web"
+        android:onClick="btnNatGeo_click"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
