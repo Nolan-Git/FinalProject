@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         prefedit.clear();
         prefedit.commit();
 
-
+//login and register buttons
         register = (Button) findViewById(R.id.register);
         register.setOnClickListener(new View.OnClickListener() {
             @Override

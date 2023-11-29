@@ -32,7 +32,7 @@ public class HomePageActivity extends AppCompatActivity {
         else{
             user.append(username+" ISADMIN = "+isAdmin);
         }
-
+        //goes tot about view
         Intent aboutView = new Intent(this,AboutActivity.class);
         about.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +40,7 @@ public class HomePageActivity extends AppCompatActivity {
                 startActivity(aboutView);
             }
         });
-        
+        //goes to shop view
         Intent shopView = new Intent(this,ShopActivity.class);
         shop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +49,7 @@ public class HomePageActivity extends AppCompatActivity {
             }
         });
 
-
+//goes ot map view
         Intent map = new Intent(this,MapsActivity.class);
         maps.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +57,7 @@ public class HomePageActivity extends AppCompatActivity {
                 startActivity(map);
             }
         });
+        //goes to bird list view
         Intent birdSearch = new Intent(this,BirdSearchActivity.class);
         viewBirds.setOnClickListener(new View.OnClickListener() {
             @Override

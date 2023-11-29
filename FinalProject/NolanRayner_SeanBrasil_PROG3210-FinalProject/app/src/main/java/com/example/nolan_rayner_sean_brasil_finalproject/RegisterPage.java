@@ -34,7 +34,7 @@ public class RegisterPage extends AppCompatActivity {
         submit = (Button) findViewById(R.id.submit);
 
         MyDB = new DBHelper(this);
-
+//gets user info andf adds to the database
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

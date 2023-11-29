@@ -28,7 +28,7 @@ public class DBHelper extends SQLiteOpenHelper{
         MyDB.execSQL("drop Table if exists person");
 
     }
-
+//add data to dataabse
     public Boolean insertData(String name, String dob, String aadhar_number, String city, String state, String pincode, String phone_number){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -49,7 +49,7 @@ public class DBHelper extends SQLiteOpenHelper{
     }
 
     public Boolean checkaadhar(String aadhar_number){
-
+//check if account exists
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("select * from person where aadhar_number = ?",new String[]{aadhar_number});
         if(cursor.getCount()>0)
@@ -61,7 +61,7 @@ public class DBHelper extends SQLiteOpenHelper{
         }
     }
     public Boolean isAdmin(String aadhar_number){
-
+//chseck if is admin
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("select * from person where aadhar_number = ?",new String[]{aadhar_number});
         if (!cursor.moveToFirst()){
@@ -76,7 +76,7 @@ public class DBHelper extends SQLiteOpenHelper{
         }
     }
     public String getName(String aadhar_number){
-
+//gets the name of the user
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("select name from person where aadhar_number = ?",new String[]{aadhar_number});
         if (!cursor.moveToFirst()){

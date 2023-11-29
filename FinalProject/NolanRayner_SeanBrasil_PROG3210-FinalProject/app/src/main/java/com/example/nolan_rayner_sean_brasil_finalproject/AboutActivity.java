@@ -14,7 +14,7 @@ public class AboutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
     }
-
+//sends user to outside links
     public void btnBirdCanada_click(View view){
         goToUrl ( "https://www.birdscanada.org/");
     }

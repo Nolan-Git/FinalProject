@@ -15,7 +15,7 @@ public class ShopActivity extends AppCompatActivity {
     String Customer, finalDisplay, errorCheckString,printChosen;
     EditText textCustomerName, textCustomerEmail, textCustomerPhone, textCustomerCredit, textCustomerAddy;
     int heronCost, bluejayCost, cardinalCost, swanCost, totalCost;
-
+//shop activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

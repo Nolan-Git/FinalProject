@@ -42,12 +42,13 @@ public class LoginPage extends AppCompatActivity {
                 else{
                     Boolean result = MyDB.checkaadhar(aadhar_numberr);
                     if(result == false)
-                    {
+                    {//if user does not exixst sends them to regfister
                         Toast.makeText(LoginPage.this, "User does not exists.\n Kindly Register", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), RegisterPage.class);
                         startActivity(intent);
                     }
                     else{
+                        // if they do exist sends them to homepage
                         userPreferences = getSharedPreferences("info", MODE_PRIVATE);
                         SharedPreferences.Editor prefEditor = userPreferences.edit();
                         String Username = MyDB.getName(aadhar_numberr);

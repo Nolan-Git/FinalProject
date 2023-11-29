@@ -1,7 +1,7 @@
 package com.example.nolan_rayner_sean_brasil_finalproject;
 
 public class BirdModel {
-
+//bird modle, get the name location status and description
     private String birdName;
     private String birdLocation;
     private String birdStatus;
