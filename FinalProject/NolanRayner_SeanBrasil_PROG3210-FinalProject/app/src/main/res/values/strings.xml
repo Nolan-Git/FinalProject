@@ -31,4 +31,12 @@
         <item>"Parc national du Mont-Tremblant"</item>
         <item>"Kejimkujik National Park and National Historic Site"</item>
     </string-array>
+
+    <string-array name="Locations">
+        <item>Atlantic Canada</item>
+        <item>Central Canada</item>
+        <item>Canadian Prairies</item>
+        <item>Canadian West Coast</item>
+        <item>Canadian North Territories</item>
+    </string-array>
 </resources>

@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class addBirdActivity extends AppCompatActivity {
     private EditText birdNameEdt, birdStasusEdt, birdLocationEdt, birdDescriptionEdt;
     private Button addBirdBtn, readBirdBtn;
+    private Spinner dropdown;
     private DBHandler dbHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +23,15 @@ public class addBirdActivity extends AppCompatActivity {
         // initializing all our variables.
         birdNameEdt = findViewById(R.id.idEdtBirdName);
         birdStasusEdt = findViewById(R.id.idEdtBirdStatus);
-        birdLocationEdt = findViewById(R.id.idEdtBirdLocation);
+        //birdLocationEdt = findViewById(R.id.idEdtBirdLocation);
         birdDescriptionEdt = findViewById(R.id.idEdtBirdDescription);
         addBirdBtn = findViewById(R.id.idBtnAddBird);
         readBirdBtn = findViewById(R.id.idBtnReadBird);
+
+        String[] items =getResources().getStringArray(R.array.Locations);
+        dropdown = findViewById(R.id.spinnerEdtBirdLocation0);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        dropdown.setAdapter(adapter);
 
         // creating a new dbhandler class
         // and passing our context to it.
@@ -37,7 +45,7 @@ public class addBirdActivity extends AppCompatActivity {
                 // below line is to get data from all edit text fields.
                 String birdName = birdNameEdt.getText().toString();
                 String birdstatus = birdStasusEdt.getText().toString();
-                String birdLocation = birdLocationEdt.getText().toString();
+                String birdLocation =  dropdown.getSelectedItem().toString();
                 String birdDescription = birdDescriptionEdt.getText().toString();
 
                 // validating if the text fields are empty or not.

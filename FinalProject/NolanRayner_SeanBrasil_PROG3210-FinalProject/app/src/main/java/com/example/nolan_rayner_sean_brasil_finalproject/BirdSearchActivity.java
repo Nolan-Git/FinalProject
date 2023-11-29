@@ -27,7 +27,6 @@ public class BirdSearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bird_search);
         addBird = findViewById(R.id.btnAddBird);
-
         Intent birdAdd = new Intent(this,addBirdActivity.class);
         SharedPreferences userpref = getSharedPreferences("info",MODE_PRIVATE);
         Boolean isAdmin = userpref.getBoolean("isAdmin",false);
@@ -68,10 +67,5 @@ public class BirdSearchActivity extends AppCompatActivity {
 
 // setting our adapter to recycler view.
         birdLV.setAdapter(birdLVAdapter);
-
-
-
     }
-
-
 }

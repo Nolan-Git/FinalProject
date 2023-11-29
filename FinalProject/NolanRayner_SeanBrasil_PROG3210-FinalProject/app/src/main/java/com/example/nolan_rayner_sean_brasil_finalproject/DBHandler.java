@@ -87,28 +87,6 @@ public class DBHandler extends SQLiteOpenHelper {
         cursorBirds.close();
         return birdModalArrayList;
     }
-    public ArrayList<BirdModel> searchBirdList(String search) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursorBirds = db.rawQuery("select * from mybirds where name = ?",new String[]{search});
-        ArrayList<BirdModel> birdModalArrayList = new ArrayList<>();
-        if (cursorBirds.moveToFirst()) {
-            do {
-                birdModalArrayList.add(new
-                        BirdModel(cursorBirds.getString(1),
-                        cursorBirds.getString(2),
-                        cursorBirds.getString(4),
-                        cursorBirds.getString(3)));
-            } while (cursorBirds.moveToNext());
-// moving our cursor to next.
-        }
-// at last closing our cursor
-// and returning our array list.
-        cursorBirds.close();
-        return birdModalArrayList;
-    }
-
-
-
 
     // below is the method for updating our courses
     public void updateCourse(String originalBirdName, String birdName, String
