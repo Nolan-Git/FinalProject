@@ -61,7 +61,7 @@ public class addBirdActivity extends AppCompatActivity {
                 // after adding the data we are displaying a toast message.
                 Toast.makeText(addBirdActivity.this, "Bird has been added.", Toast.LENGTH_SHORT).show();
                 birdNameEdt.setText("");
-                birdLocationEdt.setText("");
+               // birdLocationEdt.setText("");
                 birdStasusEdt.setText("");
                 birdDescriptionEdt.setText("");
             }

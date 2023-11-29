@@ -62,6 +62,8 @@ public class HomePageActivity extends AppCompatActivity {
         viewBirds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                birdSearch.putExtra("searchQuery","");
+                birdSearch.putExtra("search",false);
                 startActivity(birdSearch);
             }
         });

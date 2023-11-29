@@ -15,10 +15,12 @@ import java.util.ArrayList;
 
 public class BirdSearchActivity extends AppCompatActivity {
     Button addBird;
+    Bundle values;
     private ArrayList<BirdModel> birdModalArrayList;
     private DBHandler dbHandler;
     private BirdListAdapter birdLVAdapter;
     private RecyclerView birdLV;
+    Button btnSearch;
     TextView txtsearch;
     String searchQuery;
     Boolean search = false;
@@ -31,15 +33,21 @@ public class BirdSearchActivity extends AppCompatActivity {
         SharedPreferences userpref = getSharedPreferences("info",MODE_PRIVATE);
         Boolean isAdmin = userpref.getBoolean("isAdmin",false);
 
+        values = getIntent().getExtras();
+        search = values.getBoolean("search",false);
+        String searchQuery = values.getString("searchQuery","");
+
+
 // initializing our all variables.
         birdModalArrayList = new ArrayList<>();
         dbHandler = new DBHandler(BirdSearchActivity.this);
 
 // getting our course array
-// list from db handler class.
-
+// list from db handler class
             birdModalArrayList = dbHandler.readCourses();
-
+            if (search){
+                birdModalArrayList = dbHandler.searchBirdList(searchQuery);
+            }
 
 // on below line passing our array list to our adapter class.
         birdLVAdapter = new BirdListAdapter(birdModalArrayList, BirdSearchActivity.this);
@@ -67,5 +75,22 @@ public class BirdSearchActivity extends AppCompatActivity {
 
 // setting our adapter to recycler view.
         birdLV.setAdapter(birdLVAdapter);
+        Intent bs = new Intent(this,BirdSearchActivity.class);
+        btnSearch = findViewById(R.id.btnSearch);
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView searchQuerySect = findViewById(R.id.birdSearch);
+                String SearchQuery = searchQuerySect.getText().toString();
+                bs.putExtra("searchQuery",SearchQuery);
+                bs.putExtra("search",true);
+                startActivity(bs);
+            }
+        });
+
+
+    }
+    public void test(){
+
     }
 }
